@@ -2,10 +2,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
-              <center><p class="copy-footer-29">© 2021 303Studio. All rights reserved | Notestudio保留部分权力 | Designed by <a href="https://www.NoteStudio.top">Notes</a></p></center>
+   
               <h1>该网站正在维护...........</h1>
               <h2>Our Webside is being maintained</h2>   
               <h3>303没马</h3>
+    <footer class="footer text-center bg-white">
+   <!-- hitokoto -->
+
+<div class="hitokoto-title">
+	<i class="fa fa-paragraph"></i>
+	<b>NoteStudio</b>
+</div>
+
+<div id="hitokoto">:D 获取中...</div>
+<i id="hitofrom">:D 获取中...</i>
+
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = '\xa0\xa0\xa0\xa0\xa0\xa0\xa0' + data.hitokoto;
+      var hitofrom = document.getElementById('hitofrom');
+      hitofrom.innerText = "——" + data.from + '\xa0'; 
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
+                <span id="hitokoto">© 2021Note Studio. All rights reserved | Designed by Notes</span>
+    </div>
+</footer>
+
   
 </html>
